@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe Residence | Seu Refúgio na Meia Praia · Itapema SC</title>
+  <meta name="description" content="Joe Residence em Itapema SC. Torre exclusiva com apenas 20 famílias na Meia Praia. Apartamento 902: 2 suítes, 97,51m², sacada com churrasqueira. A partir de R$ 1.268.813,70.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: #FAF8F3;
+      color: #1A2340;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* ===== BRANDBOOK TOKENS (Felipe Martendal v2) ===== */
+    :root {
+      --navy:        #1A2340;
+      --navy-light:  #243156;
+      --navy-dark:   #0D1527;
+      --gold:        #C9A96E;
+      --gold-light:  #E2C99A;
+      --off-white:   #FAF8F3;
+      --cream:       #EDE9DF;
+      --concrete:    #7A7F96;
+      --concrete-dk: #3A4260;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-weight: 800; line-height: 1.15; }
+    p { line-height: 1.7; }
+
+    /* ===== UTILS ===== */
+    .section-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 22px 0;
+    }
+    .divider.center { margin: 22px auto; }
+
+    /* ===== BUTTONS ===== */
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 18px 44px;
+      transition: background .25s, transform .2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); color: var(--navy); transform: translateY(-2px); }
+
+    .btn-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 18px 44px;
+      transition: background .25s, transform .2s;
+    }
+    .btn-wpp:hover { background: #1ebe5a; transform: translateY(-2px); }
+    .btn-wpp i { font-size: 1.3rem; }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('004_-_020_-_CONSTRUTORA_VANSIN_-_3D_-_FACHADA_DIURNA_2_-_IMAGEM_FINAL_FINAL.jpg');
+      background-size: cover;
+      background-position: center top;
+      transform: scale(1.04);
+      transition: transform 9s ease;
+    }
+    #hero.loaded .hero-bg { transform: scale(1); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(13,21,39,.28) 0%,
+        rgba(13,21,39,.55) 55%,
+        rgba(13,21,39,.82) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      padding: 48px 24px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 36px;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .65;
+    }
+    #hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: -.01em;
+    }
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,.7);
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto 52px;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(201,169,110,.35);
+      color: rgba(255,255,255,.85);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    /* ===== CONVENIENCE ===== */
+    #convenience {
+      background: var(--off-white);
+      padding: 110px 0;
+    }
+    #convenience .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: center;
+    }
+    .img-frame {
+      position: relative;
+      overflow: hidden;
+    }
+    .img-frame img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+    }
+    .img-frame .img-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(13,21,39,.88);
+      color: var(--gold);
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: 9px 18px;
+    }
+    .text-block h2 {
+      font-size: clamp(1.75rem, 3vw, 2.7rem);
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .text-block p.lead {
+      font-size: 1.05rem;
+      color: var(--concrete-dk);
+      margin-bottom: 36px;
+    }
+    .feat-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .feat-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .feat-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .feat-text strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .feat-text span {
+      font-size: .9rem;
+      color: var(--concrete);
+    }
+
+    /* ===== PRIVACY ===== */
+    #privacy {
+      background: var(--navy);
+      padding: 110px 0;
+    }
+    #privacy .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .privacy-header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 72px;
+    }
+    .privacy-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .privacy-header p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.5);
+    }
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .privacy-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(201,169,110,.12);
+      padding: 52px 44px;
+      transition: background .3s;
+    }
+    .privacy-card:hover { background: rgba(201,169,110,.08); }
+    .privacy-number {
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .privacy-number.sm { font-size: 2.4rem; letter-spacing: .04em; }
+    .privacy-card h3 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .privacy-card p {
+      font-size: .9rem;
+      color: rgba(255,255,255,.45);
+      line-height: 1.65;
+    }
+
+    /* ===== LEISURE ===== */
+    #leisure {
+      background: var(--cream);
+      padding: 110px 0;
+    }
+    #leisure .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .leisure-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 72px;
+    }
+    .leisure-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--navy);
+    }
+    .leisure-header p {
+      font-size: 1.05rem;
+      color: var(--concrete-dk);
+      margin-top: 14px;
+    }
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .amenity-card {
+      background: var(--off-white);
+      padding: 36px 28px;
+      border-bottom: 3px solid transparent;
+      transition: border-color .3s, transform .25s;
+    }
+    .amenity-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+    .amenity-card.wide { grid-column: span 2; }
+    .a-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(201,169,110,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .amenity-card h3 {
+      font-size: .98rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .amenity-card p {
+      font-size: .86rem;
+      color: var(--concrete);
+      line-height: 1.6;
+    }
+
+    /* Planta lazer — thumbnail 2-col */
+    .plant-lazer-section {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(26,35,64,.1);
+    }
+    .plant-lazer-info h3 {
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .plant-lazer-info p {
+      font-size: .9rem;
+      color: var(--concrete-dk);
+    }
+    .plant-lazer-thumb {
+      position: relative;
+      cursor: zoom-in;
+      overflow: hidden;
+      background: var(--off-white);
+      padding: 12px;
+      max-width: 320px;
+      margin-left: auto;
+    }
+    .plant-lazer-thumb img {
+      width: 100%;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .plant-lazer-thumb:hover img { transform: scale(1.03); }
+    .plant-lazer-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13,21,39,0);
+      transition: background .3s;
+    }
+    .plant-lazer-thumb:hover .plant-lazer-thumb-overlay {
+      background: rgba(13,21,39,.25);
+    }
+    .plant-lazer-thumb-overlay span {
+      background: var(--navy);
+      color: var(--gold);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s, transform .3s;
+    }
+    .plant-lazer-thumb:hover .plant-lazer-thumb-overlay span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Lead Modal */
+    .lead-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(13,21,39,.88);
+      z-index: 99998;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      animation: lbFadeIn .22s ease;
+    }
+    .lead-overlay.open { display: flex; }
+    .lead-modal {
+      background: var(--navy);
+      border: 1px solid rgba(201,169,110,.2);
+      max-width: 480px;
+      width: 100%;
+      padding: 52px 48px 44px;
+      position: relative;
+      animation: lbZoomIn .25s ease;
+    }
+    .lead-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(201,169,110,.25);
+      color: var(--gold);
+      font-size: .9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .lead-modal-close:hover { background: rgba(201,169,110,.15); }
+    .lead-modal-eyebrow {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lead-modal-eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .lead-modal h3 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .lead-modal-sub {
+      font-size: .9rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .lead-field {
+      margin-bottom: 18px;
+    }
+    .lead-field label {
+      display: block;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .lead-field input {
+      width: 100%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(201,169,110,.25);
+      color: #fff;
+      font-family: 'Urbanist', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .lead-field input::placeholder { color: rgba(255,255,255,.3); font-weight: 400; }
+    .lead-field input:focus { border-color: var(--gold); }
+    .lead-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 18px 24px;
+      border: none;
+      cursor: pointer;
+      margin-top: 28px;
+      transition: background .25s, transform .2s;
+    }
+    .lead-submit:hover { background: #1ebe5a; transform: translateY(-2px); }
+    .lead-submit i { font-size: 1.2rem; }
+    .lead-privacy {
+      font-size: .72rem;
+      color: rgba(255,255,255,.25);
+      text-align: center;
+      margin-top: 14px;
+    }
+    @media (max-width: 640px) {
+      .plant-lazer-section { grid-template-columns: 1fr; gap: 32px; }
+      .plant-lazer-thumb { max-width: 100%; }
+      .lead-modal { padding: 40px 24px 32px; }
+    }
+
+    /* ===== UNIT ===== */
+    #unit {
+      background: var(--off-white);
+      padding: 110px 0;
+    }
+    #unit .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .plant-frame {
+      background: var(--cream);
+      padding: 24px;
+      cursor: zoom-in;
+      position: relative;
+      overflow: hidden;
+    }
+    .plant-frame img {
+      width: 100%;
+      transition: transform .4s ease;
+    }
+    .plant-frame:hover img { transform: scale(1.02); }
+    .plant-frame-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: var(--gold);
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity .3s;
+      white-space: nowrap;
+    }
+    .plant-frame:hover .plant-frame-hint { opacity: 1; }
+    .unit-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      margin-bottom: 20px;
+    }
+    .unit-text h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 32px 0;
+    }
+    .spec {
+      background: var(--cream);
+      padding: 20px 22px;
+    }
+    .spec-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .spec-label {
+      font-size: .72rem;
+      font-weight: 500;
+      color: var(--concrete);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .price-box {
+      background: var(--navy);
+      padding: 32px 36px;
+      margin-bottom: 28px;
+      border-left: 3px solid var(--gold);
+    }
+    .price-tag {
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .price-main {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .price-cond {
+      font-size: .9rem;
+      color: rgba(255,255,255,.9);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .price-cond strong { color: var(--gold-light); }
+
+    /* ===== CTA FINAL ===== */
+    #cta-final {
+      background: var(--navy-dark);
+      padding: 110px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    #cta-final .inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px;
+      text-align: center;
+    }
+    #cta-final h2 {
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    #cta-final p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.55);
+      max-width: 560px;
+      margin: 0 auto 52px;
+    }
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .trust-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .82rem;
+      color: rgba(255,255,255,.32);
+    }
+    .trust-note::before,
+    .trust-note::after {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-dark);
+      padding: 56px 48px 32px;
+      border-top: 1px solid rgba(201,169,110,.15);
+    }
+    .footer-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-vansin img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .85;
+    }
+    .footer-vansin-sub {
+      font-size: .72rem;
+      color: rgba(255,255,255,.28);
+      margin-top: 8px;
+      letter-spacing: .06em;
+    }
+    .footer-curadoria {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-curadoria-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(201,169,110,.4);
+      flex-shrink: 0;
+    }
+    .footer-curadoria-info {}
+    .footer-curadoria-label {
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-curadoria-label::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .footer-curadoria-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-curadoria-creci {
+      font-size: .78rem;
+      color: rgba(255,255,255,.35);
+      margin-top: 3px;
+    }
+    .footer-legal {
+      max-width: 1200px;
+      margin: 24px auto 0;
+      font-size: .72rem;
+      color: rgba(255,255,255,.18);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* Hero delivery badge */
+    .hero-delivery {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,169,110,.14);
+      border: 1px solid rgba(201,169,110,.5);
+      color: var(--gold-light);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-delivery i { color: var(--gold); font-size: .8rem; }
+
+    /* ===== LIGHTBOX MODAL ===== */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(13,21,39,.96);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+      animation: lbFadeIn .22s ease;
+    }
+    .lightbox-overlay.open { display: flex; }
+    @keyframes lbFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .lightbox-img {
+      max-width: min(1100px, 95vw);
+      max-height: 92vh;
+      object-fit: contain;
+      display: block;
+      box-shadow: 0 32px 80px rgba(0,0,0,.6);
+      animation: lbZoomIn .25s ease;
+      cursor: default;
+    }
+    @keyframes lbZoomIn {
+      from { transform: scale(.92); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(201,169,110,.35);
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(201,169,110,.2); }
+    .lightbox-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(13,21,39,.8);
+      padding: 8px 20px;
+      white-space: nowrap;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      #convenience .inner,
+      #unit .inner { grid-template-columns: 1fr; gap: 52px; }
+      #convenience .inner { padding: 0 32px; }
+      #unit .inner { padding: 0 32px; }
+      .img-frame img { height: 420px; }
+      .privacy-grid { grid-template-columns: 1fr; }
+      .amenities-grid { grid-template-columns: 1fr 1fr; }
+      .amenity-card.wide { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      #convenience, #privacy, #leisure, #unit, #cta-final { padding: 72px 0; }
+      #convenience .inner, #unit .inner,
+      #privacy .inner, #leisure .inner,
+      #cta-final .inner { padding: 0 20px; }
+      .img-frame img { height: 300px; }
+      .amenities-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .amenity-card.wide { grid-column: span 2; }
+      .specs-grid { grid-template-columns: 1fr 1fr; }
+      footer { padding: 48px 20px 28px; }
+      .footer-main { flex-direction: column; align-items: flex-start; gap: 32px; }
+      .btn-wpp { font-size: .75rem; padding: 16px 28px; }
+      .lightbox-overlay { padding: 16px; }
+    }
+
+    /* ===== ENTRANCE ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======================================================
+     DOBRA 1: HERO
+     ====================================================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Joe Residence · Vansin · Meia Praia</div>
+    <h1>Seu refúgio particular<br>no coração da Meia Praia.</h1>
+    <div class="hero-delivery">
+      <i class="fas fa-calendar-check"></i>
+      Entrega para Junho de 2027
+    </div>
+    <p class="hero-sub">Joe Residence · Itapema SC | A exclusividade de uma torre única com apenas 20 famílias.</p>
+    <div class="hero-badges">
+      <span class="hero-badge"><i class="fas fa-shield-alt" style="margin-right:8px;color:var(--gold)"></i>Torre Única</span>
+      <span class="hero-badge"><i class="fas fa-door-closed" style="margin-right:8px;color:var(--gold)"></i>02 Aptos por Andar</span>
+      <span class="hero-badge"><i class="fas fa-umbrella-beach" style="margin-right:8px;color:var(--gold)"></i>10 min da Praia</span>
+    </div>
+    <button class="btn-primary" onclick="openLeadModal('Quero conhecer o Joe Residence')">Conhecer Meu Refúgio Privativo</button>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DOBRA 2: CONVENIÊNCIA & ESTILO DE VIDA
+     ====================================================== -->
+<section id="convenience">
+  <div class="inner">
+    <div class="img-frame reveal">
+      <img
+        src="Joe Residence - Área de lazer - 001 - b549bd80-4591-4684-916e-61f61f5e01e7_lg.jpeg"
+        alt="Área de lazer Joe Residence"
+        loading="lazy"
+      >
+      <div class="img-tag">Lazer · Rooftop</div>
+    </div>
+    <div class="text-block reveal">
+      <span class="section-label">Localização Premium</span>
+      <h2>O prazer de viver<br>na Meia Praia.</h2>
+      <div class="divider"></div>
+      <p class="lead">Um endereço que une conveniência urbana e tranquilidade litorânea. A 10 minutos a pé das melhores praias da Costa Esmeralda, com acesso a restaurantes, comércios e serviços de Itapema.</p>
+      <ul class="feat-list">
+        <li>
+          <div class="feat-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="feat-text">
+            <strong>350m da 2ª Avenida</strong>
+            <span>Endereço de prestígio no coração da Meia Praia</span>
+          </div>
+        </li>
+        <li>
+          <div class="feat-icon"><i class="fas fa-umbrella-beach"></i></div>
+          <div class="feat-text">
+            <strong>10 minutos a pé da praia</strong>
+            <span>Acesso direto ao litoral da Meia Praia, um dos mais valorizados de SC</span>
+          </div>
+        </li>
+        <li>
+          <div class="feat-icon"><i class="fas fa-box-open"></i></div>
+          <div class="feat-text">
+            <strong>Box de Praia Individual</strong>
+            <span>Seu espaço exclusivo para guardar equipamentos de praia. Praticidade total para o seu lazer, todos os dias.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DOBRA 3: PRIVACIDADE DE TORRE ÚNICA
+     ====================================================== -->
+<section id="privacy">
+  <div class="inner">
+    <div class="privacy-header">
+      <span class="section-label">Privacidade de Torre Única</span>
+      <h2>Apenas 02 apartamentos<br>por andar.</h2>
+      <div class="divider center"></div>
+      <p>Com apenas 20 famílias em toda a torre, cada detalhe foi pensado para garantir a discrição e o bem-estar que você merece. Um padrão de privacidade que poucos empreendimentos no litoral oferecem.</p>
+    </div>
+    <div class="privacy-grid">
+      <div class="privacy-card reveal">
+        <div class="privacy-number">02</div>
+        <h3>Apartamentos por Andar</h3>
+        <p>Baixa densidade absoluta. Seus vizinhos são poucos e seus momentos, inteiramente seus.</p>
+      </div>
+      <div class="privacy-card reveal">
+        <div class="privacy-number">20</div>
+        <h3>Famílias no Empreendimento</h3>
+        <p>Uma comunidade seleta em uma torre exclusiva. Tranquilidade e discrição em cada detalhe do cotidiano.</p>
+      </div>
+      <div class="privacy-card reveal">
+        <div class="privacy-number sm">Smart</div>
+        <h3>Elevador Inteligente e Hall Decorado</h3>
+        <p>Acesso direto e seguro ao seu andar. Hall com acabamento premium para uma chegada sempre especial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DOBRA 4: LAZER E BEM-ESTAR
+     ====================================================== -->
+<section id="leisure">
+  <div class="inner">
+    <div class="leisure-header">
+      <span class="section-label">Lazer e Bem-Estar</span>
+      <h2>Um clube privativo<br>para 20 famílias.</h2>
+      <p>Infraestrutura completa reservada exclusivamente para os moradores do Joe Residence.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-card reveal">
+        <div class="a-icon"><i class="fas fa-swimmer"></i></div>
+        <h3>Piscina Adulto</h3>
+        <p>Área aquática para relaxar e aproveitar o clima privilegiado de Itapema.</p>
+      </div>
+      <div class="amenity-card reveal">
+        <div class="a-icon"><i class="fas fa-child"></i></div>
+        <h3>Piscina Infantil</h3>
+        <p>Espaço seguro e divertido para as crianças com toda a tranquilidade.</p>
+      </div>
+      <div class="amenity-card reveal">
+        <div class="a-icon"><i class="fas fa-dumbbell"></i></div>
+        <h3>Academia</h3>
+        <p>Equipamentos modernos para manter sua rotina de bem-estar sem sair do condomínio.</p>
+      </div>
+      <div class="amenity-card reveal">
+        <div class="a-icon"><i class="fas fa-glass-cheers"></i></div>
+        <h3>Salão de Festas</h3>
+        <p>Ambiente sofisticado para celebrar momentos especiais com quem você ama.</p>
+      </div>
+      <div class="amenity-card wide reveal">
+        <div class="a-icon"><i class="fas fa-couch"></i></div>
+        <h3>Área Externa de 67,88m² com Lounge ao Ar Livre</h3>
+        <p>Espaço generoso ao ar livre com lounge sofisticado para convivência e contemplação. O cenário perfeito para desfrutar da brisa e do verde de Itapema, com o privilégio de quem mora na Meia Praia.</p>
+      </div>
+    </div>
+
+    <!-- Planta de Lazer — thumbnail técnica -->
+    <div class="plant-lazer-section reveal">
+      <div class="plant-lazer-info">
+        <span class="section-label">Planta da Área de Lazer</span>
+        <h3>Lazer planejado<br>em cada detalhe.</h3>
+        <div class="divider"></div>
+        <p>A área de lazer do Joe Residence foi projetada para oferecer o máximo de bem-estar em um espaço exclusivo para apenas 20 famílias. Clique na planta para visualizar o layout completo.</p>
+      </div>
+      <div
+        class="plant-lazer-thumb"
+        onclick="openLightbox('Planta lazer.png', 'Planta · Área de Lazer')"
+        role="button"
+        tabindex="0"
+        aria-label="Ampliar planta da área de lazer"
+        onkeydown="if(event.key==='Enter') openLightbox('Planta lazer.png', 'Planta · Área de Lazer')"
+      >
+        <img src="Planta lazer.png" alt="Planta da Área de Lazer Joe Residence" loading="lazy">
+        <div class="plant-lazer-thumb-overlay">
+          <span><i class="fas fa-search-plus"></i> Ampliar Planta</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DOBRA 5: OFERTA EXCLUSIVA UNIDADE 902
+     ====================================================== -->
+<section id="unit">
+  <div class="inner">
+    <div
+      class="plant-frame reveal"
+      onclick="openLightbox('Planta tipo.png', 'Planta Tipo · Unidade 902')"
+      role="button"
+      tabindex="0"
+      aria-label="Ampliar planta tipo"
+      onkeydown="if(event.key==='Enter') openLightbox('Planta tipo.png', 'Planta Tipo · Unidade 902')"
+    >
+      <img src="Planta tipo.png" alt="Planta do Apartamento Joe Residence" loading="lazy">
+      <div class="plant-frame-hint">
+        <i class="fas fa-search-plus"></i> Ampliar Planta
+      </div>
+    </div>
+    <div class="unit-text">
+      <div class="unit-badge">Unidade Disponível</div>
+      <h2>Apartamento 902<br>A sua unidade na Meia Praia.</h2>
+      <div class="divider"></div>
+      <div class="specs-grid">
+        <div class="spec reveal">
+          <div class="spec-val">2</div>
+          <div class="spec-label">Suítes</div>
+        </div>
+        <div class="spec reveal">
+          <div class="spec-val">97,51m²</div>
+          <div class="spec-label">Área Privativa</div>
+        </div>
+        <div class="spec reveal">
+          <div class="spec-val">Sacada</div>
+          <div class="spec-label">Com Churrasqueira</div>
+        </div>
+        <div class="spec reveal">
+          <div class="spec-val">2</div>
+          <div class="spec-label">Vagas Cobertas</div>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price-tag">Ponto de entrada estratégico · Meia Praia</div>
+        <div class="price-main">R$&nbsp;1.268.813,70</div>
+        <div class="price-cond">
+          <strong>Entrada de 25%</strong> com saldo parcelado em <strong>72 vezes</strong><br>
+          direto com a construtora, sem intermediários financeiros.
+        </div>
+        <div style="margin-top:16px;padding:14px 18px;background:rgba(201,169,110,.1);border-left:3px solid var(--gold);font-size:.88rem;color:rgba(255,255,255,0.6);line-height:1.6;">
+          <i class="fas fa-calendar-check" style="color:var(--gold);margin-right:8px;"></i>
+          <strong style="color:#fff;">Invista em um ativo pronto para Junho de 2027.</strong>
+          Fluxo de pagamento direto sem juros bancários.
+        </div>
+      </div>
+      <button
+        class="btn-primary"
+        onclick="openLeadModal('Tenho interesse no Apartamento 902 do Joe Residence')"
+      >
+        Quero Conhecer Esta Unidade
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DOBRA 6: CONVERSÃO E AUTORIDADE
+     ====================================================== -->
+<section id="cta-final">
+  <div class="inner">
+    <span class="section-label" style="display:block;text-align:center;">Engenharia Financeira Personalizada</span>
+    <h2>Facilitamos a aquisição<br>do seu imóvel na Meia Praia.</h2>
+    <p>Condições especiais direto com a construtora. Sem burocracia bancária. Com a curadoria de quem conhece cada detalhe do Joe Residence e da Costa Esmeralda.</p>
+    <div class="cta-group">
+      <button
+        class="btn-wpp"
+        onclick="openLeadModal('Tenho interesse no Joe Residence e gostaria de uma proposta personalizada')"
+      >
+        <i class="fab fa-whatsapp"></i>
+        Falar com Felipe Martendal no WhatsApp
+      </button>
+      <div class="trust-note">Resposta em instantes · Sem compromisso</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     RODAPÉ
+     ====================================================== -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-vansin">
+      <img src="Logotipo principal.png" alt="Construtora Vansin">
+      <div class="footer-vansin-sub">Construtora Vansin · Itapema, SC</div>
+    </div>
+    <div class="footer-curadoria">
+      <img
+        src="foto de perfil.png"
+        alt="Felipe Martendal"
+        class="footer-curadoria-photo"
+      >
+      <div class="footer-curadoria-info">
+        <div class="footer-curadoria-label">Curadoria</div>
+        <div class="footer-curadoria-name">Felipe Martendal</div>
+        <div class="footer-curadoria-creci">CRECI-SC 70525</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-legal">
+    As imagens utilizadas nesta página são representações artísticas do empreendimento. Informações sujeitas a alteração sem aviso prévio.<br>
+    Joe Residence · Construtora Vansin · Itapema, SC
+  </div>
+</footer>
+
+
+
+
+<!-- ======================================================
+     LEAD CAPTURE MODAL
+     ====================================================== -->
+<div class="lead-overlay" id="leadOverlay" onclick="closeLMOnBg(event)">
+  <div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    <div class="lead-modal-eyebrow">Joe Residence · Meia Praia</div>
+    <h3 id="leadTitle">Receba as condições<br>exclusivas desta unidade.</h3>
+    <p class="lead-modal-sub">Preencha seus dados e Felipe Martendal entra em contato em instantes com todas as informações.</p>
+    <form onsubmit="submitLeadForm(event)">
+      <div class="lead-field">
+        <label for="leadName">Seu nome</label>
+        <input type="text" id="leadName" placeholder="Como posso te chamar?" required autocomplete="name">
+      </div>
+      <div class="lead-field">
+        <label for="leadPhone">Seu WhatsApp</label>
+        <input type="tel" id="leadPhone" placeholder="(47) 99999-9999" required autocomplete="tel">
+      </div>
+      <button type="submit" class="lead-submit">
+        <i class="fab fa-whatsapp"></i>
+        Falar com Felipe Agora
+      </button>
+    </form>
+    <p class="lead-privacy"><i class="fas fa-lock" style="margin-right:6px;font-size:.65rem;"></i>Seus dados são protegidos. Sem spam.</p>
+  </div>
+</div>
+
+
+<!-- ======================================================
+     LIGHTBOX MODAL
+     ====================================================== -->
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" id="lightboxClose" onclick="closeLightbox()" aria-label="Fechar">
+    <i class="fas fa-times"></i>
+  </button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+
+<script>
+  // Hero Ken Burns
+  window.addEventListener('load', function () {
+    document.getElementById('hero').classList.add('loaded');
+  });
+
+  // Smooth scroll para âncoras
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Reveal on scroll
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 4) * 0.09 + 's';
+    observer.observe(el);
+  });
+
+  // ── Lead Capture Modal ──────────────────────────────────
+  var _leadContext = '';
+
+  function openLeadModal(context) {
+    _leadContext = context || 'Tenho interesse no Joe Residence';
+    document.getElementById('leadOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () {
+      document.getElementById('leadName').focus();
+    }, 150);
+  }
+
+  function closeLeadModal() {
+    document.getElementById('leadOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLMOnBg(e) {
+    if (e.target === document.getElementById('leadOverlay')) closeLeadModal();
+  }
+
+  function submitLeadForm(e) {
+    e.preventDefault();
+    var name  = document.getElementById('leadName').value.trim();
+    var phone = document.getElementById('leadPhone').value.trim();
+    var text  = 'Olá Felipe, meu nome é ' + name
+              + '. Quero informações sobre a Unidade 902 do Joe Residence, com entrega para 2027. (WhatsApp: ' + phone + ').';
+    window.open('https://wa.me/5548984371664?text=' + encodeURIComponent(text), '_blank');
+    closeLeadModal();
+    document.getElementById('leadName').value  = '';
+    document.getElementById('leadPhone').value = '';
+  }
+
+  // Máscara de telefone — (XX) XXXXX-XXXX
+  document.addEventListener('DOMContentLoaded', function () {
+    var phoneInput = document.getElementById('leadPhone');
+    if (!phoneInput) return;
+    phoneInput.addEventListener('input', function (e) {
+      var v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      var mask = '';
+      if (v.length === 0) { mask = ''; }
+      else if (v.length <= 2)  { mask = '(' + v; }
+      else if (v.length <= 7)  { mask = '(' + v.slice(0,2) + ') ' + v.slice(2); }
+      else if (v.length <= 11) { mask = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7); }
+      e.target.value = mask;
+    });
+  });
+
+  // ── Lightbox ────────────────────────────────────────────
+  function openLightbox(src, caption) {
+    var overlay = document.getElementById('lightboxOverlay');
+    var img     = document.getElementById('lightboxImg');
+    var cap     = document.getElementById('lightboxCaption');
+    img.src     = src;
+    img.alt     = caption;
+    cap.textContent = caption;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function () {
+      document.getElementById('lightboxImg').src = '';
+    }, 300);
+  }
+
+  function closeLightboxOnBg(e) {
+    if (e.target === document.getElementById('lightboxOverlay')) closeLightbox();
+  }
+
+  // Escape fecha qualquer modal aberto
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+      closeLeadModal();
+    }
+  });
+</script>
+</body>
+</html>
